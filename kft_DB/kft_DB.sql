@@ -20,6 +20,8 @@
 
 -- Dump dei dati della tabella kft_db.elementi: ~0 rows (circa)
 
+-- Dump dei dati della tabella kft_db.m_pagamento: ~0 rows (circa)
+
 -- Dump dei dati della tabella kft_db.ordine: ~0 rows (circa)
 
 -- Dump dei dati della tabella kft_db.prodotto: ~0 rows (circa)
