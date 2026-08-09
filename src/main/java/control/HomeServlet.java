@@ -16,7 +16,7 @@ public class HomeServlet extends HttpServlet {
 
         // Usa il DAO per prendere i prodotti (le key) dal database
         ProdottoDAO prodottoDAO = new ProdottoDAO();
-        List<ProdottoDAO> listaKeys = prodottoDAO.getProdottiInEvidenza();
+        List<Prodotto> listaKeys = prodottoDAO.getProdottiInEvidenza();
 
         //Salva i prodotti nella "request" per passarli alla JSP
         request.setAttribute("prodottiHome", listaKeys);
