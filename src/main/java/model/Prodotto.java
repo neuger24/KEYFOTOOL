@@ -6,6 +6,7 @@ public class Prodotto {
     private String nome_p;
     private String tipo;
     private String descrizione;
+    private String foto;
     private double prezzo;
     private int disponibile;
 
@@ -13,11 +14,12 @@ public class Prodotto {
 
     }
 
-    public Prodotto(int id_prodotto, String nome_p, String tipo, String descrizione, double prezzo, int disponibile) {
+    public Prodotto(int id_prodotto, String nome_p, String tipo, String descrizione,String foto , double prezzo, int disponibile) {
         this.id_prodotto = id_prodotto;
         this.nome_p = nome_p;
         this.tipo = tipo;
         this.descrizione = descrizione;
+        this.foto = foto;
         this.prezzo = prezzo;
         this.disponibile = disponibile;
     }
@@ -36,6 +38,10 @@ public class Prodotto {
 
     public String getDescrizione() {
         return descrizione;
+    }
+
+    public String getFoto() {
+        return foto;
     }
 
     public double getPrezzo() {
@@ -62,6 +68,10 @@ public class Prodotto {
         this.descrizione = descrizione;
     }
 
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
@@ -77,6 +87,7 @@ public class Prodotto {
                 ", nome_p='" + nome_p + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", descrizione='" + descrizione + '\'' +
+                ", foto='" + foto + '\'' +
                 ", prezzo=" + prezzo +
                 ", disponibile=" + disponibile +
                 '}';
