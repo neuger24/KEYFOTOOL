@@ -4,9 +4,7 @@ import model.Prodotto;
 import util.DBConnection;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ProdottoDAO {
 
@@ -14,7 +12,7 @@ public class ProdottoDAO {
     public List<Prodotto> getProdottiInEvidenza(int limit) {
         List<Prodotto> prodotti = new ArrayList<>();
 
-        String query = "SELECT * FROM " + NOME_TABELLA + " WHERE disponibile = 1";
+        String query = "SELECT * FROM " + NOME_TABELLA + " WHERE disponibile = 1";// da modificare per il prodotto in evidenza
 
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
