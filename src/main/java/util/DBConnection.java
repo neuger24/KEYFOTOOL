@@ -30,6 +30,4 @@ public class DBConnection {
 
         return ds.getConnection();
     }
-
-
 }

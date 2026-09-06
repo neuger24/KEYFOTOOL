@@ -7,17 +7,19 @@ public class Prodotto {
     private String tipo;
     private String descrizione;
     private double prezzo;
+    private int disponibile;
 
     public Prodotto() {
 
     }
 
-    public Prodotto(int id_prodotto, String nome_p, String tipo, String descrizione, double prezzo) {
+    public Prodotto(int id_prodotto, String nome_p, String tipo, String descrizione, double prezzo, int disponibile) {
         this.id_prodotto = id_prodotto;
         this.nome_p = nome_p;
         this.tipo = tipo;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
+        this.disponibile = disponibile;
     }
 
     public int getId_prodotto() {
@@ -40,6 +42,10 @@ public class Prodotto {
         return prezzo;
     }
 
+    public int getDisponibile() {
+        return disponibile;
+    }
+
     public void setId_prodotto(int id_prodotto) {
         this.id_prodotto = id_prodotto;
     }
@@ -60,6 +66,10 @@ public class Prodotto {
         this.prezzo = prezzo;
     }
 
+    public void setDisponibile(int disponibile) {
+        this.disponibile = disponibile;
+    }
+
     @Override
     public String toString() {
         return "Prodotto{" +
@@ -68,6 +78,7 @@ public class Prodotto {
                 ", tipo='" + tipo + '\'' +
                 ", descrizione='" + descrizione + '\'' +
                 ", prezzo=" + prezzo +
+                ", disponibile=" + disponibile +
                 '}';
     }
 }
