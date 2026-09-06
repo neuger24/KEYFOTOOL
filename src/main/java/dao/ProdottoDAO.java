@@ -12,7 +12,7 @@ public class ProdottoDAO {
     public List<Prodotto> getProdottiInEvidenza(int limit) {
         List<Prodotto> prodotti = new ArrayList<>();
 
-        String query = "SELECT * FROM " + NOME_TABELLA + " WHERE disponibile = 1";// da modificare per il prodotto in evidenza
+        String query = "SELECT * FROM " + NOME_TABELLA + " WHERE disponibile = 1 ORDER BY id DESC LIMIT ?";// da modificare per il prodotto in evidenza
 
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -39,6 +39,37 @@ public class ProdottoDAO {
         }
 
         return prodotti;
+    }
+
+    public Prodotto prodottoDaId(int id) {
+        Prodotto model = null;
+        String query = "SELECT * FROM " + NOME_TABELLA + " WHERE id = ?";
+
+        try (Connection connection = DBConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, id);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    model = new Prodotto();
+
+                    model.setId_prodotto(resultSet.getInt("id_prodotto"));
+                    model.setNome_p(resultSet.getString("nome_p"));
+                    model.setTipo(resultSet.getString("tipo"));
+                    model.setDescrizione(resultSet.getString("descrizione"));
+                    model.setFoto(resultSet.getString("foto"));
+                    model.setPrezzo(resultSet.getDouble("prezzo"));
+                    model.setDisponibile(resultSet.getInt("disponibile"));
+
+                }
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Errore durante l'estrazione del prodotto per ID: " + e.getMessage());
+        }
+
+        return model;
     }
 
 }
