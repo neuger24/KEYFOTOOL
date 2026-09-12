@@ -210,6 +210,37 @@ public class ProdottoDAO {
         }
     }
 
+    //public Map<Integer, String> getCategorie() {}
+
+    public List<Prodotto> ProdottiAdmin() {
+        List<Prodotto> lista = new ArrayList<>();
+        String query = "SELECT * FROM prodotto";
+
+        try (java.sql.Connection con = DBConnection.getConnection();
+             java.sql.PreparedStatement ps = con.prepareStatement(query);
+             java.sql.ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setId_prodotto(rs.getInt("id_prodotto"));
+                p.setNome_p(rs.getString("nome"));
+                p.setTipo(rs.getString("tipo"));
+                p.setDescrizione(rs.getString("descrizione"));
+                p.setFoto(rs.getString("immagine"));
+                p.setPrezzo(rs.getDouble("prezzo"));
+                p.setDisponibile(rs.getInt("disponibile"));
+                lista.add(p);
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
+
+
+
+
 
     public int contaProdottiFiltrati(String[] categorie, String prezzoMax, String searchQuery) {
         int totale = 0;
