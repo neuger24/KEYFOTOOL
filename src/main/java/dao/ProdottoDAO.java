@@ -237,11 +237,6 @@ public class ProdottoDAO {
         return lista;
     }
 
-
-
-
-
-
     public int contaProdottiFiltrati(String[] categorie, String prezzoMax, String searchQuery) {
         int totale = 0;
         StringBuilder query = new StringBuilder("SELECT COUNT(*) FROM prodotti WHERE 1=1");
