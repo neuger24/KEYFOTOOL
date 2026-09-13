@@ -10,12 +10,13 @@ public class Cliente {
     private String nome;
     private String cognome;
     private Date data_di_nascita;
+    private int ruolo;
 
     public Cliente() {
 
     }
 
-    public Cliente(int id_cliente, String username, String email, String password, String nome, String cognome, Date data_di_nascita) {
+    public Cliente(int id_cliente, String username, String email, String password, String nome, String cognome, Date data_di_nascita, int ruolo) {
         this.id_cliente = id_cliente;
         this.username = username;
         this.email = email;
@@ -23,6 +24,7 @@ public class Cliente {
         this.nome = nome;
         this.cognome = cognome;
         this.data_di_nascita = data_di_nascita;
+        this.ruolo = ruolo;
     }
 
     public int getId_cliente() {
@@ -53,6 +55,10 @@ public class Cliente {
         return data_di_nascita;
     }
 
+    public int getRuolo() {
+        return ruolo;
+    }
+
     public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
     }
@@ -81,6 +87,10 @@ public class Cliente {
         this.data_di_nascita = data_di_nascita;
     }
 
+    public void setRuolo(int ruolo) {
+        this.ruolo = ruolo;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -91,6 +101,7 @@ public class Cliente {
                 ", nome='" + nome + '\'' +
                 ", cognome='" + cognome + '\'' +
                 ", data_di_nascita=" + data_di_nascita +
+                ", ruolo=" + ruolo +
                 '}';
     }
 }
