@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Cliente {
+public class Utente {
     private int id_cliente;
     private String username;
     private String email;
@@ -12,11 +12,11 @@ public class Cliente {
     private Date data_di_nascita;
     private int ruolo;
 
-    public Cliente() {
+    public Utente(int idCliente, String username, String email, String nome, String cognome, java.sql.Date dataDiNascita, int ruolo) {
 
     }
 
-    public Cliente(int id_cliente, String username, String email, String password, String nome, String cognome, Date data_di_nascita, int ruolo) {
+    public Utente(int id_cliente, String username, String email, String password, String nome, String cognome, Date data_di_nascita, int ruolo) {
         this.id_cliente = id_cliente;
         this.username = username;
         this.email = email;
@@ -93,7 +93,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "Utente{" +
                 "id_cliente=" + id_cliente +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
