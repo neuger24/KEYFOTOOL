@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 
         } catch (Exception e) {//da rivedere
             e.printStackTrace();
-            request.setAttribute("errore", "Si è verificato un errore di sistema. Riprova più tardi.");
+            request.setAttribute("errore", "Si è verificato un errore. Riprova più tardi.");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
             dispatcher.forward(request, response);
         }
