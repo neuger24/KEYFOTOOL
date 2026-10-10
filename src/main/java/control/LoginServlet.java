@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
         UtenteDAO utenteDAO = new UtenteDAO();
 
-        try {
+        try {//da rivedere
             Utente utenteLoggato = utenteDAO.login(email, password);
 
             if (utenteLoggato != null) {
@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             }
 
-        } catch (Exception e) {
+        } catch (Exception e) {//da rivedere
             e.printStackTrace();
             request.setAttribute("errore", "Si è verificato un errore di sistema. Riprova più tardi.");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
