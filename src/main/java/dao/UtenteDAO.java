@@ -38,7 +38,7 @@ public class UtenteDAO {
 
     public boolean salvaUtente(Utente utente) {
         boolean salvataggioCompletato = false;
-        String query = "INSERT INTO utenti (username, email, passward, nome, cognome, data_di_nascita ) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO utente (username, email, passward, nome, cognome, data_di_nascita ) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
